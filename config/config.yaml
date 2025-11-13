@@ -1,0 +1,21 @@
+company:
+  name: "두산에너빌리티"
+  code: "034020"
+  industry: "발전·플랜트"
+data:
+  years: 3
+  source: "FnGuide SVD_Finance"
+paths:
+  raw_dir: "data_raw"
+  processed_dir: "data_processed"
+  sqlite_path: "data_processed/credit.db"
+  report_path: "reports/doosan_credit.md"
+report:
+  analyst: "Changwon Credit Lab"
+  currency: "KRW billion"
+  bank_view: "여신심사-김성규"
+  typst:
+    enabled: true
+    compile_pdf: true
+    output_dir: "reports"
+    template: "src/changwon_credit/templates/credit_report.typ"

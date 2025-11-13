@@ -1,0 +1,61 @@
+tables:
+  companies:
+    primary_key: company_code
+    columns:
+      - name: company_code
+        type: TEXT
+      - name: company_name
+        type: TEXT
+      - name: industry
+        type: TEXT
+  financials_income:
+    primary_key: [company_code, year]
+    columns:
+      - { name: company_code, type: TEXT }
+      - { name: year, type: INTEGER }
+      - { name: revenue, type: REAL, unit: "KRW bn" }
+      - { name: gross_profit, type: REAL }
+      - { name: operating_income, type: REAL }
+      - { name: pretax_income, type: REAL }
+      - { name: net_income, type: REAL }
+      - { name: interest_expense, type: REAL }
+  financials_balance:
+    primary_key: [company_code, year]
+    columns:
+      - { name: company_code, type: TEXT }
+      - { name: year, type: INTEGER }
+      - { name: total_assets, type: REAL }
+      - { name: total_liabilities, type: REAL }
+      - { name: equity, type: REAL }
+      - { name: current_assets, type: REAL }
+      - { name: current_liabilities, type: REAL }
+      - { name: noncurrent_assets, type: REAL }
+      - { name: noncurrent_liabilities, type: REAL }
+  financials_cashflow:
+    primary_key: [company_code, year]
+    columns:
+      - { name: company_code, type: TEXT }
+      - { name: year, type: INTEGER }
+      - { name: operating_cash_flow, type: REAL }
+      - { name: investing_cash_flow, type: REAL }
+      - { name: financing_cash_flow, type: REAL }
+      - { name: investment_outflows, type: REAL }
+      - { name: non_cash_expense, type: REAL }
+      - { name: non_cash_income, type: REAL }
+      - { name: ending_cash, type: REAL }
+  analytics_credit:
+    primary_key: [company_code, year]
+    columns:
+      - { name: company_code, type: TEXT }
+      - { name: year, type: INTEGER }
+      - { name: revenue, type: REAL }
+      - { name: operating_income, type: REAL }
+      - { name: ebitda, type: REAL }
+      - { name: net_income, type: REAL }
+      - { name: free_cash_flow, type: REAL }
+      - { name: debt_to_equity, type: REAL }
+      - { name: current_ratio, type: REAL }
+      - { name: interest_coverage, type: REAL }
+      - { name: revenue_growth, type: REAL }
+      - { name: net_income_growth, type: REAL }
+      - { name: fcf_margin, type: REAL }
