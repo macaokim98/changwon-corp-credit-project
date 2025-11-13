@@ -33,63 +33,10 @@ MENU_LABELS = {
 
 
 def _apply_light_theme() -> None:
-    """Inject CSS for a clean white background with dark typography."""
-
-    st.markdown(
-        """
-        <style>
-            :root { color-scheme: light; }
-            .stApp {
-                background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 60%, #f0f0f5 100%);
-                color: #111111;
-            }
-            section[data-testid="stSidebar"] {
-                background: rgba(255, 255, 255, 0.95);
-                color: #111111;
-                border-right: 1px solid rgba(0,0,0,0.08);
-                box-shadow: 0 0 20px rgba(0,0,0,0.08);
-            }
-            section[data-testid="stSidebar"] .stRadio > label,
-            section[data-testid="stSidebar"] span,
-            section[data-testid="stSidebar"] label {
-                color: #111111;
-            }
-            .stButton>button, .stDownloadButton>button {
-                background: #111111;
-                color: #fff;
-                border: none;
-                border-radius: 6px;
-            }
-            .stButton>button:hover, .stDownloadButton>button:hover {
-                background: #333333;
-                transform: translateY(-1px);
-                box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-            }
-            div[data-testid="metric-container"] {
-                background: rgba(255, 255, 255, 0.95);
-                border-radius: 14px;
-                padding: 16px;
-                border: 1px solid rgba(0,0,0,0.08);
-                box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-                color: #111111;
-            }
-            div[data-testid="stMarkdown"] p {
-                color: #202124;
-            }
-            .stTabs [data-baseweb="tab-list"] { gap: 12px; }
-            .stTabs [data-baseweb="tab"] {
-                background: rgba(0,0,0,0.04);
-                border-radius: 999px;
-                color: #202124;
-            }
-            .stTabs [aria-selected="true"] {
-                background: #111111;
-                color: #ffffff;
-            }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+    """Apply minimal CSS without DOM manipulation conflicts."""
+    # Use config.toml for theme instead of injecting CSS
+    # This prevents React rendering conflicts
+    pass
 
 
 @st.cache_data(show_spinner=False)
